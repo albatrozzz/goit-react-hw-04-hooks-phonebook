@@ -18,5 +18,4 @@ export default function ContactList({contacts, onClick}){
 
 ContactList.propTypes = {
     contacts: PropTypes.array,
-    onClick: PropTypes.func
 }

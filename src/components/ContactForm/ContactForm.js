@@ -2,7 +2,7 @@ import { useState } from "react";
 import s from './ContactForm.module.css'
 
 
-export default function ContactForm(){
+export default function ContactForm({onSubmit}){
   const [name, setName] = useState('')
   const [number, setNumber] = useState('')
 
@@ -13,18 +13,19 @@ export default function ContactForm(){
           break
         case 'number':
           setNumber(event.target.value)
+          break
+        default:
+          break
       }
     }
 
     
      const formSubmit = (event) => {
         event.preventDefault()
-        // const {name, number} = this.state
-        // this.props.onSubmit({name, number})
-        // this.setState({
-        //     name: '',
-        //     number: ''
-        // })
+        onSubmit({
+          name,
+          number,
+        })
       }
 
         return (

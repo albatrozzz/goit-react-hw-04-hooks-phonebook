@@ -44,17 +44,17 @@ function App(){
     setFilter(event.target.value)
   }
 
-  const formSubmit = (event) => {
+  const formSubmit = (user) => {
     if (contacts.some(contact => {
-      return contact.name.toLowerCase() === event.name.toLowerCase()
+      return contact.name.toLowerCase() === user.name.toLowerCase()
      })){
-       return alert(`${event.name} is already in cotacts`)
+       return alert(`${user.name} is already in cotacts`)
      }
 
      setContacts(prev => prev.concat({
       id: nanoid(),
-      name: event.name,
-      number: event.number 
+      name: user.name,
+      number: user.number 
      }))
   }
 
